@@ -1,8 +1,6 @@
 go-curl
 =======
 
-[![Build Status](https://secure.travis-ci.org/andelf/go-curl.png?branch=master)](http://travis-ci.org/andelf/go-curl)
-
 my golang libcurl(curl) binding.
 
 See more examples in ./examples/ directory~!
@@ -48,14 +46,14 @@ package main
 
 import (
     "fmt"
-    curl "github.com/andelf/go-curl"
+    "github.com/golang-basic/go-curl"
 )
 
 func main() {
     easy := curl.EasyInit()
     defer easy.Cleanup()
 
-    easy.Setopt(curl.OPT_URL, "http://www.baidu.com/")
+    easy.Setopt(curl.OPT_URL, "http://www.google.com/")
 
     // make a callback function
     fooTest := func (buf []byte, userdata interface{}) bool {
